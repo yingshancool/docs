@@ -171,7 +171,8 @@ server {
         include fastcgi_params;
         fastcgi_split_path_info       ^(.+\.php)(/.+)$;
         fastcgi_param PATH_INFO       $fastcgi_path_info;
-        fastcgi_param PATH_TRANSLATED $document_root$fastcgi_path_info;
+        # fastcgi_param PATH_TRANSLATED $document_root$fastcgi_path_info;
+        # and set php.ini cgi.fix_pathinfo=0
         fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
     }
 
